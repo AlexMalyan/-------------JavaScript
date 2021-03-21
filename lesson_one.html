@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Lesson_one</title>
+</head>
+
+<body>
+    <header class="header container">
+        <div class="logo"><a href="/">MalanProg</a></div>
+        <h1 class="header__h1">Основы языка JavaScript <br>урок первый</h1>
+        <p></p>
+    </header>
+    <div class="main-content container">
+        <ol class="list">
+            <li class="list__item">Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру
+                в
+                градусах по Фаренгейту. Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf – температура
+                по
+                Фаренгейту, Tc – температура по Цельсию
+            </li>
+            <li class="list__item">Работа с переменными.</li>
+            <li class="list__item">Объявить две переменные: admin и name. Записать в name строку "Василий"; Скопировать
+                значение из name в admin. Вывести admin (должно вывести «Василий»).
+            </li>
+            <li class="list__item">*Чему будет равно JS-выражение 1000 + "108"</li>
+            <li class="list__item">*Самостоятельно разобраться с атрибутами тега script (async и defer)/</li>
+        </ol>
+
+        <ol id="ol" class="answers">
+            <li>Упражнение №4: JS-выражение 1000 + "108" = "1000108"</li>
+        </ol>
+
+
+
+        <script>
+            /* 
+            * https://learn.javascript.ru/variables - вывод на страницу по новому
+             */
+            let tc = +prompt(' Введите температуру по цельсию, которую переведем сейчас в Фаренгейты ');
+            let tf = (9 / 5) * tc + 32;
+
+            let name = 'Василий';
+            let admin;
+            admin = name;
+
+            let liLast = document.createElement('li');
+            // li.className = "answers__li";
+            liLast.innerHTML = "Упражнение №2 : Имя будет " + admin;
+            ol.prepend(liLast); // вставить liLast в конец <ol>  Записать в name строку "Василий" 
+
+            let liFirst = document.createElement('li');
+            // li.className = "answers__li";
+            liFirst.innerHTML = "Упражнение №1: " + tc + " °C = " + tf + " °F";
+            ol.prepend(liFirst); // вставить liFirst в начало <ol>
+
+
+        </script>
+
+    </div>
+    <footer class="footer container">
+        <strong class="footer__text">Создано в учебных целях MalanProg</strong>
+    </footer>
+
+</body>
+
+</html>
