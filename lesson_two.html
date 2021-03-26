@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Lesson_one</title>
+</head>
+
+<body>
+    <header class="header container">
+        <div class="logo"><a href="https://github.com/AlexMalyan" target="_blank">MalanProg</a></div>
+        <h1 class="header__h1">Основы языка JavaScript <br>урок первый</h1>
+        <p></p>
+    </header>
+    <div class="main-content container">
+        <ol class="list">
+            <li class="list__item"> Почему код даёт именно такие результаты?
+            </li>
+            <script>
+                // let a = 1, b = 1, c, d;
+                // c = ++a; alert(c);//2,  префиксная форма возвращает новое значение
+
+                // console.log(a); //проверил сколько
+
+                // d = b++; alert(d);// 1, постфиксная форма возвращает старое значение
+
+                // c = (2 + ++a); alert(c); // 5  
+                // /* мы прибавили единицу в переменную а ее значение стало равно 2. В данном примере прибавляем еще единицу и а становится равно 3, отсюда ответ 5 */
+
+                // d = (2 + b++); alert(d);      // 4
+                // /* мы прибавили единицу в переменную b ее значение стало равно 	2.В данном примере прибавляем еще единицу и а становится равно 3, постфиксная форма возвращает старое значение т.е. 2, отсюда получаем 4 */
+
+                // alert(a); // 3,
+                // /* прибавили единицу в примере 1 и примере 3 */
+
+                // alert(b);  // 3
+                // /* прибавили единицу в примере 2 и примере 4 */
+
+            </script>
+
+            <li class="list__item">Чему будет равен x в примере ниже?</li>
+            <!-- <script>
+                let a = 2;
+                let x = 1 + (a *= 5);  /* X будет равен 11 т.к. оператор *= это сокращенный оператор, полностью он будет выглядеть x = 1 + (a = a * 5 ) */
+                console.log('1 + (2* 5) = ' + x);
+            </script> -->
+
+            <li class="list__item"> Объявить две целочисленные переменные a и b и задать им произвольные начальные
+                значения. Затем написать скрипт, который работает по следующему принципу: <br>
+                * если a и b положительные, вывести их разность;<br>
+                * если а и b отрицательные, вывести их произведение;<br>
+                * если а и b разных знаков, вывести их сумму;<br>
+                ноль можно считать положительным числом.
+
+                <!-- <script>
+                    let a = +prompt(' Число переменной a ');
+                    let b = +prompt(' Число переменной b ');
+
+                    switch (true) {
+                        case (a >= 0 && b >= 0)://
+                            x = a - b;
+                            alert('a и b положительные, вывожу их разность ' + a + ' - ' + b + ' = ' + x);
+                            break;
+                        case (a < 0 && b < 0):
+                            x = a * b;
+                            alert('а и b отрицательные, вывожу их произведение ' + a + ' * ' + b + ' = ' + x);
+                            break;
+                        case (a >= 0 && b < 0 || a < 0 && b >= 0):
+                            x = a + b;
+                            alert('а и b разных знаков, вывожу их сумму ' + a + ' + ' + b + ' = ' + x);
+                            break;
+                    }
+                </script>
+            </li> -->
+            <li class="list__item">Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch
+                организовать вывод чисел от a до 15.</li>
+            <script>
+                a = +prompt('Введите число от 1 до 15');
+                switch (a) {
+                    case 1:
+                        alert('Ваше число 1');
+                        break;
+                    case 2:
+                        alert('Ваше число 2');
+                        break;
+                    case 3:
+                        alert('Ваше число 3');
+                        break;
+                    case 4:
+                        alert('Ваше число 4');
+                        break;
+                    case 5:
+                        alert('Ваше число 5');
+                        break;
+                    case 6:
+                        alert('Ваше число 6');
+                        break;
+                    case 7:
+                        alert('Ваше число 7');
+                        break;
+                    case 8:
+                        alert('Ваше число 8');
+                        break;
+                    case 9:
+                        alert('Ваше число 9');
+                        break;
+                    case 10:
+                        alert('Ваше число 10');
+                        break;
+                    case 11:
+                        alert('Ваше число 11');
+                        break;
+                    case 12:
+                        alert('Ваше число 12');
+                        break;
+                    case 13:
+                        alert('Ваше число 13');
+                        break;
+                    case 14:
+                        alert('Ваше число 14');
+                        break;
+                    case 15:
+                        alert('Ваше число 15');
+                        break;
+                    default:
+                        alert('Ваше число ' + a + ' не подходит под условие!');
+                        break;
+                }
+            </script>
+
+
+            <li class="list__item">Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+                Обязательно использовать оператор return.</li>
+            <script>
+                let a = 2;
+                let b = 3;
+
+                function plus(a, b) {
+                    return a + b;
+                }
+
+                function minus(a, b) {
+                    return a - b;
+                }
+
+                function div(a, b) {
+                    return a / b;
+                }
+
+                function mult(a, b) {
+                    return a * b;
+                }
+
+                console.log('сложение ' + plus(5, 2));
+                console.log('разность ' + minus(a, b));
+                console.log('деление ' + div(10, 2));
+                console.log('произведение ' + mult(1, 2));
+            </script>
+
+
+            <li class="list__item">Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2,
+                operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости
+                от переданного значения операции выполнить одну из арифметических операций и использовать функции из
+                пункта 3) и вернуть полученное значение (использовать switch).</li>
+
+            <script>
+
+                function mathOperation(arg1 = 6, arg2 = 5, operation) {
+
+                    let result = 0;
+
+                    switch (operation) {
+                        case '+':
+                            result = arg1 + arg2;
+                            break;
+                        case '-':
+                            result = arg1 - arg2;
+                            break;
+                        case '*':
+                            result = arg1 * arg2;
+                            break;
+                        case '/':
+                            result = arg1 / arg2;
+                            break;
+                        default: throw new Error('Unknow operation')
+                    }
+
+                    console.log(`Результат ${arg1} ${operation} ${arg2} = ${result}`);
+                }
+                mathOperation(6, 5, '+');
+                mathOperation(6, 5, '-');
+                mathOperation(6, 5, '*');
+                mathOperation(6, 5, '/');
+            </script>
+
+
+        </ol>
+
+        <ol id="ol" class="answers">
+            <li>Упражнение №4: JS-выражение 1000 + "108" = "1000108"</li>
+        </ol>
+
+
+
+
+
+
+
+    </div>
+    <footer class="footer container">
+        <strong class="footer__text">Создано в учебных целях MalanProg</strong>
+    </footer>
+
+</body>
+
+</html>
