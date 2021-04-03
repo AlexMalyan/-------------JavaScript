@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+  "use strict";
+  /*
+  * Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней       * товаров. Товары в корзине хранятся в массиве. Задачи:
+  *   Организовать такой массив для хранения товаров в корзине;
+  *   Организовать функцию countBasketPrice, которая будет считать стоимость корзины
+  */
+
+  const basket = [
+    ['BMW', 10000, 6],
+    ['Ford', 20000, 1],
+    ['Aston Martin', 15000, 3]
+  ];
+
+  console.log(basket);
+
+  // Реализую корзину
+
+  function countBasketPrice(basket) {
+    let totalCount = 0;
+    basket.forEach(itemCart => {
+      totalCount += itemCart[1] * itemCart[2];
+    });
+    return totalCount;
+  }
+
+  console.log('ИТОГО В КОРЗИНЕ = ' + countBasketPrice(basket));
+
+</script>
