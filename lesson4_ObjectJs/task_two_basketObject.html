@@ -12,26 +12,40 @@ const basket = [
     ['Aston Martin', 15000, 3]
   ];
   */
+  const products = [
+    {
+      model: 'BMW',
+      price: 10000,
+      quantity: 6,
+    },
+    {
+      model: 'Ford',
+      price: 20000,
+      quantity: 1
+    },
+    {
+      model: 'Aston Martin',
+      price: 15000,
+      quantity: 3
+    }
+  ];
   // Корзина один объект
   const basket = {
     // свойство корзины список товаров
-    "products": [
-      ['BMW', 10000, 6],
-      ['Ford', 20000, 1],
-      ['Aston Martin', 15000, 3]
-    ],
+
     // метод корзины: считаем стоимость товаров
     countBasketPrice: function () {
       // console.log('будет выдавать ' + this.products['0']['0']);
       let totalCount = 0;
-      this.products.forEach(itemCart => {
-        console.log('будет выдавать ' + itemCart[0]);
-        totalCount += itemCart[1] * itemCart[2];
+      products.forEach(itemCart => {
+        console.log('будет выдавать ' + itemCart.model);
+        totalCount += itemCart.price * itemCart.quantity;
       });
       return totalCount;
     },
   }
   console.log('Всего в корзине ' + basket.countBasketPrice());
+  console.log(products)
 
 
 
