@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>CART GENERATION</title>
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+  <!-- 
+    3. Сделать генерацию корзины динамической: верстка корзины не должна находиться в HTML-структуре. Там должен быть только div, в который будет вставляться корзина, сгенерированная на базе JS:
+    3.1. Пустая корзина должна выводить строку «Корзина пуста»;
+    3.2. Наполненная должна выводить «В корзине: n товаров на сумму m рублей».
+    4*. Сделать так, чтобы товары в каталоге выводились при помощи JS:
+    4.1. Создать массив товаров (сущность Product);
+    4.2. При загрузке страницы на базе данного массива генерировать вывод из него. HTML-код должен содержать только div id=”catalog” без вложенного кода. Весь вид каталога генерируется JS.
+   -->
+  <h1 class="title">Shopping Bag</h1>
+  <div class="shopping-cart"></div>
+
+  <script>
+    const goods = [
+      {
+        id: 1,
+        image: "https://robohash.org/cupiditateetvoluptas.png?size=50x50&set=set1",
+        name: "Skewers - Bamboo",
+        decription: "tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit",
+        price: "$0.95",
+        quantity: 10
+      },
+      {
+        id: 2,
+        image: "https://robohash.org/optiovoluptatemut.png?size=50x50&set=set1",
+        name: "Jicama",
+        decription: "velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante",
+        price: "$4.70",
+        quantity: 20
+      },
+      {
+        id: 3,
+        image: "https://robohash.org/estetomnis.png?size=50x50&set=set1",
+        name: "Pasta - Penne, Rigate, Dry",
+        decription: "donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit",
+        price: "$4.28",
+        quantity: 6
+      },
+      {
+        id: 4,
+        image: "https://robohash.org/omnisfugaperferendis.png?size=50x50&set=set1",
+        name: "Nantucket Pine Orangebanana",
+        decription: "sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi",
+        price: "$5.81",
+        quantity: 4
+      },
+
+      {
+        id: 5,
+        image: "https://robohash.org/aasperioreset.png?size=50x50&set=set1",
+        name: "Durian Fruit",
+        decription: "congue etiam justo etiam pretium iaculis justo in hac habitasse",
+        price: "$2.30",
+        quantity: 5
+      },
+    ];
+    console.log(goods);
+
+    const goodsBlock = document.querySelector('.shopping-cart');
+    let HTMLString = '';
+
+
+    goods.forEach((good) => {
+
+      HTMLString += `
+                                <div class="item">
+                                  <div class="buttons">
+                                    <span class="delete-btn"></span>
+                                    <span class="like-btn"></span>
+                                  </div>
+
+                                  <div class="image">
+                                    <img src="${good.image}" alt="" />
+                                  </div>
+
+                                  <div class="description">
+                                    <h3>${good.name}</h3>
+                                    <p>${good.decription}</p>
+                                  </div>
+
+                                  <div class="quantity">
+                                  <button class="plus-btn" type="button" name="button">
+                                    <img src="plus.svg" alt="" />
+                                  </button>
+                                  <input type="text" name="name" value="${good.quantity}">
+                                  <button class="minus-btn" type="button" name="button">
+                                    <img src="minus.svg" alt="" />
+                                  </button>
+                                </div>
+
+
+                                    <div class="total-price">${good.price}</div>
+                                  </div>`
+    });
+    // HTMLString += goodHTML;
+    console.log(HTMLString);
+    goodsBlock.innerHTML = HTMLString;
+  </script>
+</body>
+
+</html>

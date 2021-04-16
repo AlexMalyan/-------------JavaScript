@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Board</title>
+  <style>
+    body {
+      min-width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chess-board {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    .chess-board th {
+      padding: .5em;
+    }
+
+    .chess-board td {
+      border: 1px solid;
+      width: 5em;
+      height: 5em;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .chess-board .white {
+      background: #f0d9b5;
+    }
+
+    .chess-board .black {
+      background: #b58863;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <script>
+    'use strict';
+    function chessBoard() {
+      const table = document.createElement("table");
+      table.className = "chess-board";
+
+      let arr = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+      for (var c = 0; c < 9; c++) {
+        var th = document.createElement('th');
+        th.textContent = arr[c];
+
+        table.appendChild(th);
+      }
+      for (var i = 0; i < 8; i++) {
+        var tr = document.createElement('tr');
+        //создаем ячейку для цифр
+        var thh = document.createElement('th');
+        thh.textContent = 8 - i;
+        tr.appendChild(thh);
+
+        for (var j = 1; j < 9; j++) {
+          var td = document.createElement('td');
+          if (i % 2 == j % 2) {
+            td.className = "white";
+          } else {
+            td.className = "black";
+          }
+          tr.appendChild(td);
+        }
+        table.appendChild(tr);
+      }
+      document.body.appendChild(table);
+    }
+
+    chessBoard();
+  </script>
+</body>
+
+</html>
